@@ -5,8 +5,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "react-scripts build",
-    "deploy": "echo 'To setup deployment run: yarn setup-deploy'",
-    "setup-deploy": "app-app --deploy && yarn deploy",
+    "deploy": "echo 'To setup deployment run: npm setup-deploy'",
+    "setup-deploy": "app-app --deploy && npm deploy",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -30,6 +30,7 @@
     "stylelint-config-standard": "^20.0.0"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
     "json": "^10.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
