@@ -2,7 +2,7 @@
   "private": true,
   "name": "dsa-visualizer",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node-hot --config webpack.config.server.js",
     "build": "react-scripts build",
     "predeploy": "react-scripts build",
     "deploy": "echo 'To setup deployment run: npm setup-deploy'",
@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "@material-ui/styles": "^4.10.0",
     "json": "^10.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
