@@ -1,5 +1,6 @@
 :root {
   font: 16px / 1 sans-serif;
+  background-color: rgb(238, 227, 207);
 }
 
 html {
@@ -9,4 +10,19 @@ html {
 body {
   margin: 0;
   min-height: 100%;
+}
+
+.paper-container {
+  display:flex;
+  justify-content: center;
+  padding:10em;
+  box-shadow: 0em,2em,0em,2em;
+}
+
+.paper-content {
+  display:flex;
+  flex-direction: column;
+  background-color: white;
+  padding:4em;
+  border-radius: 0.8em;
 }
