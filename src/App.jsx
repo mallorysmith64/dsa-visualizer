@@ -1,6 +1,6 @@
 import 'react-hot-loader'
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Page2 from './pages/Page2'
 import Page3 from './pages/Page3'
 import Page4 from './pages/Page4'
@@ -11,7 +11,6 @@ function App() {
   return (
     <>
       <Router>
-      <Link to="/">Home</Link>
         <Switch>
           <Route exact path="/" component={HomePage}></Route>
           <Route exact path="/2" component={Page2}></Route>

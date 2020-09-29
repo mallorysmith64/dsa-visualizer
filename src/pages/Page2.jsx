@@ -1,7 +1,11 @@
 import React from 'react'
 
 function Page2() {
-  return <div>This is the second page</div>
+  return (
+    <section className="header">
+      <header>Stack (Array Implementation)</header>
+    </section>
+  )
 }
 
 export default Page2
