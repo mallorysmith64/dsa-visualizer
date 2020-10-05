@@ -1,8 +1,7 @@
 import React from 'react'
 import AceEditor from 'react-ace'
-import 'ace-builds/src-noconflict/mode-java'
-import 'ace-builds/src-noconflict/theme-github'
 import 'ace-builds/src-noconflict/ext-language_tools'
+import 'ace-builds/webpack-resolver'
 
 function Page2() {
   function onChange(newValue) {
@@ -16,10 +15,12 @@ function Page2() {
       </section>
 
       <AceEditor
-        mode="java"
-        theme="github"
+        mode="javascript"
+        theme="twilight"
         onChange={onChange}
-        name="UNIQUE_ID_OF_DIV"
+        name="editor"
+        placeholder="Happy Coding!"
+        fontSize={18}
         editorProps={{ $blockScrolling: true }}
         setOptions={{
           enableBasicAutocompletion: true,
@@ -27,7 +28,7 @@ function Page2() {
           enableSnippets: true,
         }}
       />
-      );
+      
     </>
   )
 }
