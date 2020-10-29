@@ -1,6 +1,6 @@
 :root {
   font: 16px / 1 sans-serif;
-  background-color: rgb(85, 81, 74);
+  background-color: rgb(245, 235, 180);
 }
 
 html {
@@ -29,9 +29,9 @@ body {
 
 /* second page */
 .header {
-  padding: 2em;
+  padding: 1.5em;
   text-align: center;
-  background: rgb(146, 240, 151);
+  background: rgb(99, 207, 104);
   color: black;
   font-size: 1.5em;
 }
@@ -56,5 +56,22 @@ body {
 .squares-container {
   display: flex;
   justify-content: flex-end;
-  padding-right: 15em;
+  padding-right: 6em;
+}
+
+.operations {
+  display:flex;
+  justify-content: flex-end;
+  padding:2em;
+  padding-right:6.7em;
+}
+
+
+input {
+  padding:0.3em;
+}
+
+
+.buttons {
+  padding-left:1.5em;
 }
