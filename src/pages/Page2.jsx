@@ -20,7 +20,7 @@ function Page2() {
         <header>Stack (Array Implementation)</header>
       </section>
 
-      <section className="controllers">
+      <section className="controller-container">
         <div className="buttons">
           <Button variant="contained" color="primary">
             <PlayArrowIcon></PlayArrowIcon>Play
@@ -42,7 +42,31 @@ function Page2() {
             <ArrowRightIcon></ArrowRightIcon>
           </Button>
         </div>
+
+        <section className="operation-container">
+          <div className="input">
+            <input type="text" placeholder="enter num or char"></input>
+          </div>
+
+          <div className="buttons">
+            <Button variant="contained">Push</Button>
+          </div>
+
+          <div className="buttons">
+            <Button variant="contained">Pop</Button>
+          </div>
+
+          <div className="buttons">
+            <Button variant="contained">Clear</Button>
+          </div>
+        </section>
       </section>
+
+      {/* <section>
+        <div className="buttons" id="read">
+          <Button variant="contained">README.md</Button>
+        </div>
+      </section> */}
 
       <section className="editor-container">
         <AceEditor
@@ -65,23 +89,6 @@ function Page2() {
           <Squares />
           <Squares />
           <Squares />
-        </section>
-
-        <section className="operations">
-          <div className="input">
-            <input type="text" placeholder="enter num or char"></input>
-          </div>
-
-          <div className="buttons">
-            <Button variant="contained">Push</Button>
-          </div>
-
-          <div className="buttons">
-            <Button variant="contained">Pop</Button>
-          </div>
-          <div className="buttons">
-            <Button variant="contained">Clear</Button>
-          </div>
         </section>
       </section>
     </>

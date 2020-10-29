@@ -1,6 +1,6 @@
 :root {
   font: 16px / 1 sans-serif;
-  background-color: rgb(245, 235, 180);
+  background-color: rgb(37, 34, 34);
 }
 
 html {
@@ -29,19 +29,20 @@ body {
 
 /* second page */
 .header {
-  padding: 1.5em;
+  padding: 1em;
   text-align: center;
-  background: rgb(99, 207, 104);
-  color: black;
+  background: rgb(57, 57, 57);
+  color:rgb(240, 234, 234);
   font-size: 1.5em;
 }
 
-.controllers {
+.controller-container {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   position: relative;
-  background-color: #505050;
+  background-color: rgb(57, 57, 57);
+  border-top: 0.05em solid rgb(114, 113, 113);
+  border-bottom: 0.05em solid rgb(114, 113, 113);
   cursor: pointer;
   pointer-events: auto;
   padding: 0.4em;
@@ -62,11 +63,37 @@ body {
   height: 2em;
 }
 
+#read {
+  width:2em;
+}
+
+/* code editor */
+
+.editor-container {
+  position: relative;
+  height:30em;
+}
+
+.ace_content {
+  position: relative;
+  border-right: 0.05em solid rgb(114, 113, 113);
+}
+
+/* illustrations */
+.squares-container {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  padding-right: 6em;
+  bottom: 20em;
+}
+
 .square {
   display: flex;
+  position:relative;
   color: #424242;
-  background: black;
-  border: 4px solid white;
+  background:rgb(20, 20, 20);
+  border: 0.02em solid white;
   float: left;
   font-size: 96px;
   font-weight: bold;
@@ -79,23 +106,23 @@ body {
   width: 136px;
 }
 
-.squares-container {
+.operation-container {
   display: flex;
-  justify-content: flex-end;
-  padding-right: 6em;
+  flex-wrap:wrap;
+  position:relative;
+  padding-left:10em;
 }
 
-.operations {
+/* .operations {
   display: flex;
-  justify-content: flex-end;
-  padding: 2em;
-  padding-right: 6.7em;
-}
+  position:relative;
+} */
 
 input {
   padding: 0.3em;
 }
 
 .buttons {
+  position:relative;
   padding-left: 1.5em;
 }
