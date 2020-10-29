@@ -1,12 +1,13 @@
 import React from 'react'
 import AceEditor from 'react-ace'
-import 'ace-builds/src-noconflict/mode-java'
-import 'ace-builds/src-noconflict/theme-github'
 import 'ace-builds/src-noconflict/ext-language_tools'
+import 'ace-builds/webpack-resolver'
+
+import Squares from '../components/Squares'
 
 function Page2() {
   function onChange(newValue) {
-    console.log('change', newValue)
+    console.log('changed array', newValue)
   }
 
   return (
@@ -15,19 +16,29 @@ function Page2() {
         <header>Stack (Array Implementation)</header>
       </section>
 
-      <AceEditor
-        mode="java"
-        theme="github"
-        onChange={onChange}
-        name="UNIQUE_ID_OF_DIV"
-        editorProps={{ $blockScrolling: true }}
-        setOptions={{
-          enableBasicAutocompletion: true,
-          enableLiveAutocompletion: true,
-          enableSnippets: true,
-        }}
-      />
-      );
+      <section className="editor-container">
+        <AceEditor
+          mode="javascript"
+          theme="twilight"
+          onChange={onChange}
+          name="editor"
+          placeholder="Happy Coding!"
+          fontSize={18}
+          editorProps={{ $blockScrolling: true }}
+          setOptions={{
+            enableBasicAutocompletion: true,
+            enableLiveAutocompletion: true,
+            enableSnippets: true,
+          }}
+        />
+
+        <section className="squares-container">
+          <Squares />
+          <Squares />
+          <Squares />
+          <Squares />
+        </section>
+      </section>
     </>
   )
 }
