@@ -36,6 +36,32 @@ body {
   font-size: 1.5em;
 }
 
+.controllers {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  background-color: #505050;
+  cursor: pointer;
+  pointer-events: auto;
+  padding: 0.4em;
+  padding-right: 8em;
+}
+
+.left-btn {
+  padding-right: 1.5em;
+}
+
+#progress-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: orange;
+  padding: 0.2em;
+  width: 10em;
+  height: 2em;
+}
+
 .square {
   display: flex;
   color: #424242;
@@ -60,18 +86,16 @@ body {
 }
 
 .operations {
-  display:flex;
+  display: flex;
   justify-content: flex-end;
-  padding:2em;
-  padding-right:6.7em;
+  padding: 2em;
+  padding-right: 6.7em;
 }
-
 
 input {
-  padding:0.3em;
+  padding: 0.3em;
 }
 
-
 .buttons {
-  padding-left:1.5em;
+  padding-left: 1.5em;
 }
