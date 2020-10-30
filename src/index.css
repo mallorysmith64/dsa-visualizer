@@ -12,6 +12,11 @@ body {
   min-height: 100%;
 }
 
+
+a:link{
+  text-decoration: none !important;
+}
+
 .paper-container {
   display: flex;
   justify-content: center;
@@ -92,7 +97,7 @@ body {
   display: flex;
   position:relative;
   color: #424242;
-  background:rgb(20, 20, 20);
+  background:rgb(36, 36, 36);
   border: 0.02em solid white;
   float: left;
   font-size: 96px;
