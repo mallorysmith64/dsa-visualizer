@@ -1,6 +1,7 @@
 import 'react-hot-loader'
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Nav from './components/Nav'
 import Page2 from './pages/Page2'
 import Page3 from './pages/Page3'
 import Page4 from './pages/Page4'
@@ -10,7 +11,9 @@ import NotFound from './pages/NotFound'
 function App() {
   return (
     <>
+    
       <Router>
+      <Nav/>
         <Switch>
           <Route exact path="/" component={HomePage}></Route>
           <Route exact path="/2" component={Page2}></Route>
