@@ -1,19 +1,17 @@
 import React, { useState } from 'react'
-import AceEditor from 'react-ace'
-import 'ace-builds/src-noconflict/ext-language_tools'
-import 'ace-builds/webpack-resolver'
+import Editor from "./Editor"
 import { Button } from '@material-ui/core'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft'
 import ArrowRightIcon from '@material-ui/icons/ArrowRight'
 
-function Page2() {
+function Stack() {
   let [push, setPush] = useState('')
   let [submitted, setSubmitted] = useState(false)
 
   const handleChange = event => {
-    console.log(event.target.value)
     setPush(event.target.value)
+     console.log(event.target.value)
   }
 
   const submitChange = event => {
@@ -84,19 +82,7 @@ function Page2() {
       </section> */}
 
       <section className="editor-container">
-        <AceEditor
-          mode="javascript"
-          theme="twilight"
-          name="editor"
-          placeholder="Happy Coding!"
-          fontSize={18}
-          editorProps={{ $blockScrolling: true }}
-          setOptions={{
-            enableBasicAutocompletion: true,
-            enableLiveAutocompletion: true,
-            enableSnippets: true,
-          }}
-        />
+        {Editor}
 
         <section className="squares-container">
           <button className="square">
@@ -120,4 +106,4 @@ function Page2() {
   )
 }
 
-export default Page2
+export default Stack
