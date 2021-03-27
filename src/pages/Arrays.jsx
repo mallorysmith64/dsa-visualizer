@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Editor from "./Editor"
+import Editor from './Editor'
 import { Button } from '@material-ui/core'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft'
@@ -12,13 +12,12 @@ function Arrays() {
   const handleChange = event => {
     setPush(event.target.value)
     setSubmitted(false)
-    console.log("Input Value: ", event.target.value)
+    console.log('Input Value: ', event.target.value)
   }
 
   const submitChange = () => {
-    // event.preventDefault()
     setSubmitted(true)
-    console.log("Value Submitted: ", push)
+    console.log('Value Submitted: ', push)
   }
 
   return (
@@ -61,7 +60,7 @@ function Arrays() {
               ></input>
             </div>
           </form>
-          
+
           <Button onClick={submitChange} value="Submit" variant="contained">
             Push
           </Button>
@@ -80,22 +79,18 @@ function Arrays() {
         {Editor}
 
         <section className="squares-container">
+          <button className="square">{submitted === true ? push : ''}</button>
+
+          <button className="square">{submitted === true ? push : ''}</button>
 
           <button className="square">
-            {submitted === true ? push[0] : ''}
+
           </button>
 
           <button className="square">
-            {submitted === true ? push[1] : ''}
+
           </button>
 
-          <button className="square">
-            {submitted === true ? push[2] : ''}
-          </button>
-
-          <button className="square">
-            {submitted === true ? push[3] : ''}
-          </button>
         </section>
       </section>
     </>
