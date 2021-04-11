@@ -6,18 +6,17 @@ import ArrowLeftIcon from '@material-ui/icons/ArrowLeft'
 import ArrowRightIcon from '@material-ui/icons/ArrowRight'
 
 function Arrays() {
-  let [push, setPush] = useState([])
-  let [submitted, setSubmitted] = useState(false)
+  let [array, setArray] = useState([])
+  let [field, setField] = useState('')
 
-  const handleChange = event => {
-    setPush(event.target.value)
-    setSubmitted(false)
-    console.log('Input Value: ', event.target.value)
+  const handlePush = event => {
+    setArray([...array, field])
+    console.log('Input Value: ', field)
   }
 
-  const submitChange = () => {
-    setSubmitted(true)
-    console.log('Value Submitted: ', push)
+  const changeField = event => {
+    console.log('field', field, 'event.target', event.target, 'value', event.target.value)
+    setField(event.target.value)
   }
 
   return (
@@ -50,18 +49,19 @@ function Arrays() {
         </div>
 
         <section className="operation-container">
-          <form onSubmit={submitChange}>
+          <form>
             <div className="input">
               <input
                 type="text"
-                onChange={handleChange}
-                value={push}
+                onChange={changeField}
+                defaultValue={field}
                 placeholder="enter num or char"
               ></input>
+  
             </div>
           </form>
 
-          <Button onClick={submitChange} value="Submit" variant="contained">
+          <Button onClick={handlePush} value="Push" variant="contained">
             Push
           </Button>
 
@@ -79,18 +79,10 @@ function Arrays() {
         {Editor}
 
         <section className="squares-container">
-          <button className="square">{submitted === true ? push : ''}</button>
-
-          <button className="square">{submitted === true ? push : ''}</button>
-
-          <button className="square">
-
-          </button>
-
-          <button className="square">
-
-          </button>
-
+          {array.map ( (v, i) => {
+            console.log('array', array, 'i', i, 'v', v)
+             return <button key={`v${i}`} className="square">{v}</button>
+          })}
         </section>
       </section>
     </>
