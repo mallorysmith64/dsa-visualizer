@@ -9,13 +9,26 @@ function Arrays() {
   let [array, setArray] = useState([])
   let [field, setField] = useState('')
 
-  const handlePush = event => {
+  const handlePush = () => {
     setArray([...array, field])
     console.log('Input Value: ', field)
   }
 
+  const handlePop = index => {
+    const list = array.splice(index,1);
+    setArray(list)
+    console.log("Removed Value: ", field)
+  }
+
   const changeField = event => {
-    console.log('field', field, 'event.target', event.target, 'value', event.target.value)
+    console.log(
+      'field',
+      field,
+      'event.target',
+      event.target,
+      'value',
+      event.target.value
+    )
     setField(event.target.value)
   }
 
@@ -59,20 +72,25 @@ function Arrays() {
                 maxLength="7"
                 size="12"
               ></input>
-  
             </div>
           </form>
 
-          <Button onClick={handlePush} value="Push" variant="contained">
-            Push
-          </Button>
-
           <div className="buttons">
-            <Button variant="contained">Pop</Button>
+            <Button onClick={handlePush} value="Push" variant="contained">
+              Push
+            </Button>
           </div>
 
           <div className="buttons">
-            <Button variant="contained">Clear</Button>
+            <Button onClick={handlePop} value="Pop" variant="contained">
+              Pop
+            </Button>
+          </div>
+
+          <div className="buttons">
+            <Button value="Clear" variant="contained">
+              Clear
+            </Button>
           </div>
         </section>
       </section>
@@ -81,9 +99,13 @@ function Arrays() {
         {Editor}
 
         <section className="squares-container">
-          {array.map ( (v, i) => {
+          {array.map((v, i) => {
             console.log('array', array, 'i', i, 'v', v)
-             return <button key={`v${i}`} className="square">{v}</button>
+            return (
+              <button key={`v${i}`} className="square">
+                {v}
+              </button>
+            )
           })}
         </section>
       </section>
