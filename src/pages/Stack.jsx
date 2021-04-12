@@ -1,17 +1,24 @@
-import React from 'react'
-import AceEditor from 'react-ace'
-import 'ace-builds/src-noconflict/ext-language_tools'
-import 'ace-builds/webpack-resolver'
+import React, { useState } from 'react'
+import Editor from "./Editor"
 import { Button } from '@material-ui/core'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft'
 import ArrowRightIcon from '@material-ui/icons/ArrowRight'
 
-import Squares from '../components/Squares'
+function Stack() {
+  let [push, setPush] = useState('')
+  let [submitted, setSubmitted] = useState(false)
 
-function Page2() {
-  function onChange(newValue) {
-    console.log('changed array', newValue)
+  const handleChange = event => {
+    setPush(event.target.value)
+     console.log(event.target.value)
+  }
+
+  const submitChange = event => {
+    event.preventDefault()
+    console.log('changed')
+    setSubmitted(true)
+    setPush(push)
   }
 
   return (
@@ -44,13 +51,19 @@ function Page2() {
         </div>
 
         <section className="operation-container">
-          <div className="input">
-            <input type="text" placeholder="enter num or char"></input>
-          </div>
-
-          <div className="buttons">
-            <Button variant="contained">Push</Button>
-          </div>
+          <form onSubmit={submitChange}>
+            <div className="input">
+              <input
+                type="text"
+                onChange={handleChange}
+                value={push}
+                placeholder="enter num or char"
+              ></input>
+            </div>
+          </form>
+          <Button onClick={submitChange} value="Submit" variant="contained">
+            Push
+          </Button>
 
           <div className="buttons">
             <Button variant="contained">Pop</Button>
@@ -69,30 +82,28 @@ function Page2() {
       </section> */}
 
       <section className="editor-container">
-        <AceEditor
-          mode="javascript"
-          theme="twilight"
-          onChange={onChange}
-          name="editor"
-          placeholder="Happy Coding!"
-          fontSize={18}
-          editorProps={{ $blockScrolling: true }}
-          setOptions={{
-            enableBasicAutocompletion: true,
-            enableLiveAutocompletion: true,
-            enableSnippets: true,
-          }}
-        />
+        {Editor}
 
         <section className="squares-container">
-          <Squares />
-          <Squares />
-          <Squares />
-          <Squares />
+          <button className="square">
+            {submitted === true ? push[0] : ''}
+          </button>
+
+          <button className="square">
+            {submitted === true ? push[1] : ''}
+          </button>
+
+          <button className="square">
+            {submitted === true ? push[2] : ''}
+          </button>
+
+          <button className="square">
+            {submitted === true ? push[3] : ''}
+          </button>
         </section>
       </section>
     </>
   )
 }
 
-export default Page2
+export default Stack

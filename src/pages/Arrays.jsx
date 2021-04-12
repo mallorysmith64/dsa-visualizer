@@ -1,0 +1,92 @@
+import React, { useState } from 'react'
+import Editor from './Editor'
+import { Button } from '@material-ui/core'
+import PlayArrowIcon from '@material-ui/icons/PlayArrow'
+import ArrowLeftIcon from '@material-ui/icons/ArrowLeft'
+import ArrowRightIcon from '@material-ui/icons/ArrowRight'
+
+function Arrays() {
+  let [array, setArray] = useState([])
+  let [field, setField] = useState('')
+
+  const handlePush = event => {
+    setArray([...array, field])
+    console.log('Input Value: ', field)
+  }
+
+  const changeField = event => {
+    console.log('field', field, 'event.target', event.target, 'value', event.target.value)
+    setField(event.target.value)
+  }
+
+  return (
+    <>
+      <section className="header">
+        <header>Arrays</header>
+      </section>
+
+      <section className="controller-container">
+        <div className="buttons">
+          <Button variant="contained" color="primary">
+            <PlayArrowIcon></PlayArrowIcon>Play
+          </Button>
+        </div>
+
+        <div className="buttons left-btn">
+          <Button variant="contained" color="primary">
+            <ArrowLeftIcon></ArrowLeftIcon>
+          </Button>
+        </div>
+
+        <div id="progress-bar">
+          <div>0/4</div>
+        </div>
+
+        <div className="buttons">
+          <Button variant="contained" color="primary">
+            <ArrowRightIcon></ArrowRightIcon>
+          </Button>
+        </div>
+
+        <section className="operation-container">
+          <form>
+            <div className="input">
+              <input
+                type="text"
+                onChange={changeField}
+                defaultValue={field}
+                placeholder="enter num or char"
+              ></input>
+  
+            </div>
+          </form>
+
+          <Button onClick={handlePush} value="Push" variant="contained">
+            Push
+          </Button>
+
+          <div className="buttons">
+            <Button variant="contained">Pop</Button>
+          </div>
+
+          <div className="buttons">
+            <Button variant="contained">Clear</Button>
+          </div>
+        </section>
+      </section>
+
+      <section className="editor-container">
+        {Editor}
+
+        <section className="squares-container">
+          {array.map ( (v, i) => {
+            console.log('array', array, 'i', i, 'v', v)
+             return <button key={`v${i}`} className="square">{v}</button>
+          })}
+        </section>
+      </section>
+    </>
+  )
+}
+
+export default Arrays
