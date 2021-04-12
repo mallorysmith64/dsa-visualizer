@@ -12,8 +12,7 @@ body {
   min-height: 100%;
 }
 
-
-a:link{
+a:link {
   text-decoration: none !important;
 }
 
@@ -37,7 +36,7 @@ a:link{
   padding: 1em;
   text-align: center;
   background: rgb(57, 57, 57);
-  color:rgb(240, 234, 234);
+  color: rgb(240, 234, 234);
   font-size: 1.5em;
 }
 
@@ -69,14 +68,13 @@ a:link{
 }
 
 #read {
-  width:2em;
+  width: 2em;
 }
 
 /* code editor */
-
 .editor-container {
   position: relative;
-  height:30em;
+  height: 30em;
 }
 
 .ace_content {
@@ -89,45 +87,35 @@ a:link{
   display: flex;
   justify-content: flex-end;
   position: relative;
-  padding-right: 6em;
+  padding-right: 1em;
   bottom: 20em;
 }
 
 .square {
   display: flex;
-  position:relative;
-  color: #424242;
-  background:rgb(36, 36, 36);
+  justify-content: center;
+  position: relative;
+  color: rgb(181, 63, 73);
+  background: rgb(36, 36, 36);
   border: 0.02em solid white;
-  float: left;
-  font-size: 96px;
-  font-weight: bold;
+  font-size: 2.2em;
   line-height: 136px;
-  height: 136px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
   width: 136px;
 }
 
 .operation-container {
   display: flex;
-  flex-wrap:wrap;
-  position:relative;
-  padding-left:10em;
+  flex-wrap: wrap;
+  position: relative;
+  padding-left: 10em;
 }
 
-/* .operations {
-  display: flex;
-  position:relative;
-} */
-
 input {
-  padding: 0.3em;
+  padding: 0.4em;
+  margin-right:2em;
 }
 
 .buttons {
-  position:relative;
+  position: relative;
   padding-left: 1.5em;
 }

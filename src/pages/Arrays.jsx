@@ -22,7 +22,7 @@ function Arrays() {
   return (
     <>
       <section className="header">
-        <header>Arrays</header>
+        <header>Stack (Array Implementation)</header>
       </section>
 
       <section className="controller-container">
@@ -56,6 +56,8 @@ function Arrays() {
                 onChange={changeField}
                 defaultValue={field}
                 placeholder="enter num or char"
+                maxLength="7"
+                size="12"
               ></input>
   
             </div>
