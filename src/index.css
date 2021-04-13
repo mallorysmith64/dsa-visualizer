@@ -16,6 +16,10 @@ a:link {
   text-decoration: none !important;
 }
 
+.menu-title {
+  text-align: center;
+}
+
 .paper-container {
   display: flex;
   justify-content: center;
@@ -27,8 +31,21 @@ a:link {
   display: flex;
   flex-direction: column;
   background-color: white;
-  padding: 4em;
+  padding: 2em;
   border-radius: 0.8em;
+}
+
+ul > li {
+  padding-bottom: 1em;
+}
+
+/*change colors for homepage links */
+ul > li > a {
+  color: #3f51b5 !important;
+}
+
+ul > li > a:hover {
+  color: brown !important;
 }
 
 /* second page */
@@ -112,7 +129,7 @@ a:link {
 
 input {
   padding: 0.4em;
-  margin-right:2em;
+  margin-right: 2em;
 }
 
 .buttons {

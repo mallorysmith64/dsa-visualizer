@@ -1,24 +1,41 @@
 import React, { useState } from 'react'
-import Editor from "./Editor"
+import Editor from './Editor'
 import { Button } from '@material-ui/core'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft'
 import ArrowRightIcon from '@material-ui/icons/ArrowRight'
 
-function Stack() {
-  let [push, setPush] = useState('')
-  let [submitted, setSubmitted] = useState(false)
+function StackArray() {
+  let [array, setArray] = useState([])
+  let [field, setField] = useState('')
 
-  const handleChange = event => {
-    setPush(event.target.value)
-     console.log(event.target.value)
+  const handlePush = () => {
+    if (array.length < 5) {
+      setArray([...array, field])
+      console.log('Added element: ', field)
+    } else {
+      console.log('Stack Overflow!')
+      alert("Stack Overflow!")
+    }
   }
 
-  const submitChange = event => {
-    event.preventDefault()
-    console.log('changed')
-    setSubmitted(true)
-    setPush(push)
+  //todo
+  const handlePop = index => {
+    const list = array.splice(index, 1)
+    setArray(list)
+    console.log('Removed Value: ', field)
+  }
+
+  const changeField = event => {
+    console.log(
+      'field',
+      field,
+      'event.target',
+      event.target,
+      'value',
+      event.target.value
+    )
+    setField(event.target.value)
   }
 
   return (
@@ -51,59 +68,55 @@ function Stack() {
         </div>
 
         <section className="operation-container">
-          <form onSubmit={submitChange}>
+          <form>
             <div className="input">
               <input
                 type="text"
-                onChange={handleChange}
-                value={push}
+                onChange={changeField}
+                defaultValue={field}
                 placeholder="enter num or char"
+                maxLength="7"
+                size="12"
               ></input>
             </div>
           </form>
-          <Button onClick={submitChange} value="Submit" variant="contained">
-            Push
-          </Button>
 
           <div className="buttons">
-            <Button variant="contained">Pop</Button>
+            <Button onClick={handlePush} value="Push" variant="contained">
+              Push
+            </Button>
           </div>
 
           <div className="buttons">
-            <Button variant="contained">Clear</Button>
+            <Button onClick={handlePop} value="Pop" variant="contained">
+              Pop
+            </Button>
+          </div>
+
+          <div className="buttons">
+            <Button value="Clear" variant="contained">
+              Clear
+            </Button>
           </div>
         </section>
       </section>
-
-      {/* <section>
-        <div className="buttons" id="read">
-          <Button variant="contained">README.md</Button>
-        </div>
-      </section> */}
 
       <section className="editor-container">
         {Editor}
 
         <section className="squares-container">
-          <button className="square">
-            {submitted === true ? push[0] : ''}
-          </button>
-
-          <button className="square">
-            {submitted === true ? push[1] : ''}
-          </button>
-
-          <button className="square">
-            {submitted === true ? push[2] : ''}
-          </button>
-
-          <button className="square">
-            {submitted === true ? push[3] : ''}
-          </button>
+          {array.map((v, i) => {
+            console.log('array', array, 'i', i, 'v', v)
+            return (
+              <button key={`v${i}`} className="square">
+                {v}
+              </button>
+            )
+          })}
         </section>
       </section>
     </>
   )
 }
 
-export default Stack
+export default StackArray
