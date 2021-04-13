@@ -1,28 +1,30 @@
 import React, { useState } from 'react'
-import Editor from './Editor'
+import Editor from "./Editor"
 import { Button } from '@material-ui/core'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft'
 import ArrowRightIcon from '@material-ui/icons/ArrowRight'
 
-function Arrays() {
-  let [array, setArray] = useState([])
-  let [field, setField] = useState('')
+function StackLinked() {
+  let [push, setPush] = useState('')
+  let [submitted, setSubmitted] = useState(false)
 
-  const handlePush = event => {
-    setArray([...array, field])
-    console.log('Input Value: ', field)
+  const handleChange = event => {
+    setPush(event.target.value)
+     console.log(event.target.value)
   }
 
-  const changeField = event => {
-    console.log('field', field, 'event.target', event.target, 'value', event.target.value)
-    setField(event.target.value)
+  const submitChange = event => {
+    event.preventDefault()
+    console.log('changed')
+    setSubmitted(true)
+    setPush(push)
   }
 
   return (
     <>
       <section className="header">
-        <header>Arrays</header>
+        <header>Stack (Linked List Implementation)</header>
       </section>
 
       <section className="controller-container">
@@ -49,19 +51,17 @@ function Arrays() {
         </div>
 
         <section className="operation-container">
-          <form>
+          <form onSubmit={submitChange}>
             <div className="input">
               <input
                 type="text"
-                onChange={changeField}
-                defaultValue={field}
+                onChange={handleChange}
+                value={push}
                 placeholder="enter num or char"
               ></input>
-  
             </div>
           </form>
-
-          <Button onClick={handlePush} value="Push" variant="contained">
+          <Button onClick={submitChange} value="Submit" variant="contained">
             Push
           </Button>
 
@@ -75,18 +75,35 @@ function Arrays() {
         </section>
       </section>
 
+      {/* <section>
+        <div className="buttons" id="read">
+          <Button variant="contained">README.md</Button>
+        </div>
+      </section> */}
+
       <section className="editor-container">
         {Editor}
 
         <section className="squares-container">
-          {array.map ( (v, i) => {
-            console.log('array', array, 'i', i, 'v', v)
-             return <button key={`v${i}`} className="square">{v}</button>
-          })}
+          <button className="square">
+            {submitted === true ? push[0] : ''}
+          </button>
+
+          <button className="square">
+            {submitted === true ? push[1] : ''}
+          </button>
+
+          <button className="square">
+            {submitted === true ? push[2] : ''}
+          </button>
+
+          <button className="square">
+            {submitted === true ? push[3] : ''}
+          </button>
         </section>
       </section>
     </>
   )
 }
 
-export default Arrays
+export default StackLinked
