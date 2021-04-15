@@ -15,15 +15,22 @@ function StackArray() {
       console.log('Added element: ', field)
     } else {
       console.log('Stack Overflow!')
-      alert("Stack Overflow!")
+      alert('Stack Overflow!')
     }
   }
 
-  //todo
-  const handlePop = index => {
-    const list = array.splice(index, 1)
-    setArray(list)
-    console.log('Removed Value: ', field)
+  // todo
+  // const isEmpty = () => {
+  //   return array.length === 0
+  //   }
+
+  const handlePop = i => {
+    let index = array.indexOf(i)
+    if (array.length > 0) {
+      array.splice(index, 1) // slice: start position, number of elements to delete
+      console.log(array)
+      setArray([...array])
+    }
   }
 
   const changeField = event => {
