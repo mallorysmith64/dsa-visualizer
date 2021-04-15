@@ -19,11 +19,6 @@ function StackArray() {
     }
   }
 
-  // todo
-  // const isEmpty = () => {
-  //   return array.length === 0
-  //   }
-
   const handlePop = i => {
     let index = array.indexOf(i)
     if (array.length > 0) {
@@ -37,9 +32,9 @@ function StackArray() {
   }
 
   const handleClear = () => {
-    while(array.length) {
-      array.pop();
-      console.log(array);
+    while (array.length) {
+      array.pop()
+      console.log(array)
       setArray([...array])
     }
   }
@@ -98,24 +93,26 @@ function StackArray() {
               ></input>
             </div>
           </form>
-
           <div className="buttons">
             <Button onClick={handlePush} value="Push" variant="contained">
               Push
             </Button>
           </div>
-
           <div className="buttons">
             <Button onClick={handlePop} value="Pop" variant="contained">
               Pop
             </Button>
           </div>
-
           <div className="buttons">
             <Button onClick={handleClear} value="Clear" variant="contained">
               Clear
             </Button>
           </div>
+
+          {/* Peek method below */}
+          <h1>
+            Top of Stack: {array.length === 0 ? '0' : `${array.slice(-1)[0]}`}
+          </h1>
         </section>
       </section>
 
