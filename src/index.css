@@ -102,10 +102,10 @@ ul > li > a:hover {
 /* illustrations */
 .squares-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   position: relative;
-  padding-right: 1em;
   bottom: 20em;
+  padding-left:30em;
 }
 
 .square {
