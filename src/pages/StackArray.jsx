@@ -32,7 +32,15 @@ function StackArray() {
       setArray([...array])
     } else {
       console.log(array)
-      alert("Stack Underflow!");
+      alert('Stack Underflow!')
+    }
+  }
+
+  const handleClear = () => {
+    while(array.length) {
+      array.pop();
+      console.log(array);
+      setArray([...array])
     }
   }
 
@@ -104,7 +112,7 @@ function StackArray() {
           </div>
 
           <div className="buttons">
-            <Button value="Clear" variant="contained">
+            <Button onClick={handleClear} value="Clear" variant="contained">
               Clear
             </Button>
           </div>
@@ -116,7 +124,7 @@ function StackArray() {
 
         <section className="squares-container">
           {array.map((v, i) => {
-            console.log('array', array, 'i', i, 'v', v)
+            console.log('array', array, 'index', i, 'field', v)
             return (
               <button key={`v${i}`} className="square">
                 {v}
