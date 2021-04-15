@@ -30,6 +30,9 @@ function StackArray() {
       array.splice(index, 1) // slice: start position, number of elements to delete
       console.log(array)
       setArray([...array])
+    } else {
+      console.log(array)
+      alert("Stack Underflow!");
     }
   }
 
