@@ -19,15 +19,21 @@ function StackArray() {
     }
   }
 
-  // todo
-  // const isEmpty = () => {
-  //   return array.length === 0
-  //   }
-
   const handlePop = i => {
     let index = array.indexOf(i)
     if (array.length > 0) {
       array.splice(index, 1) // slice: start position, number of elements to delete
+      console.log(array)
+      setArray([...array])
+    } else {
+      console.log(array)
+      alert('Stack Underflow!')
+    }
+  }
+
+  const handleClear = () => {
+    while (array.length) {
+      array.pop()
       console.log(array)
       setArray([...array])
     }
@@ -87,24 +93,26 @@ function StackArray() {
               ></input>
             </div>
           </form>
-
           <div className="buttons">
             <Button onClick={handlePush} value="Push" variant="contained">
               Push
             </Button>
           </div>
-
           <div className="buttons">
             <Button onClick={handlePop} value="Pop" variant="contained">
               Pop
             </Button>
           </div>
-
           <div className="buttons">
-            <Button value="Clear" variant="contained">
+            <Button onClick={handleClear} value="Clear" variant="contained">
               Clear
             </Button>
           </div>
+
+          {/* Peek method below */}
+          <h1>
+            Top of Stack: {array.length === 0 ? '0' : `${array.slice(-1)[0]}`}
+          </h1>
         </section>
       </section>
 
@@ -113,7 +121,7 @@ function StackArray() {
 
         <section className="squares-container">
           {array.map((v, i) => {
-            console.log('array', array, 'i', i, 'v', v)
+            console.log('array', array, 'index', i, 'field', v)
             return (
               <button key={`v${i}`} className="square">
                 {v}
