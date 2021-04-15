@@ -5,24 +5,50 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft'
 import ArrowRightIcon from '@material-ui/icons/ArrowRight'
 
-function Arrays() {
+function StackArray() {
   let [array, setArray] = useState([])
   let [field, setField] = useState('')
 
-  const handlePush = event => {
-    setArray([...array, field])
-    console.log('Input Value: ', field)
+  const handlePush = () => {
+    if (array.length < 5) {
+      setArray([...array, field])
+      console.log('Added element: ', field)
+    } else {
+      console.log('Stack Overflow!')
+      alert('Stack Overflow!')
+    }
+  }
+
+  // todo
+  // const isEmpty = () => {
+  //   return array.length === 0
+  //   }
+
+  const handlePop = i => {
+    let index = array.indexOf(i)
+    if (array.length > 0) {
+      array.splice(index, 1) // slice: start position, number of elements to delete
+      console.log(array)
+      setArray([...array])
+    }
   }
 
   const changeField = event => {
-    console.log('field', field, 'event.target', event.target, 'value', event.target.value)
+    console.log(
+      'field',
+      field,
+      'event.target',
+      event.target,
+      'value',
+      event.target.value
+    )
     setField(event.target.value)
   }
 
   return (
     <>
       <section className="header">
-        <header>Arrays</header>
+        <header>Stack (Array Implementation)</header>
       </section>
 
       <section className="controller-container">
@@ -56,21 +82,28 @@ function Arrays() {
                 onChange={changeField}
                 defaultValue={field}
                 placeholder="enter num or char"
+                maxLength="7"
+                size="12"
               ></input>
-  
             </div>
           </form>
 
-          <Button onClick={handlePush} value="Push" variant="contained">
-            Push
-          </Button>
-
           <div className="buttons">
-            <Button variant="contained">Pop</Button>
+            <Button onClick={handlePush} value="Push" variant="contained">
+              Push
+            </Button>
           </div>
 
           <div className="buttons">
-            <Button variant="contained">Clear</Button>
+            <Button onClick={handlePop} value="Pop" variant="contained">
+              Pop
+            </Button>
+          </div>
+
+          <div className="buttons">
+            <Button value="Clear" variant="contained">
+              Clear
+            </Button>
           </div>
         </section>
       </section>
@@ -79,9 +112,13 @@ function Arrays() {
         {Editor}
 
         <section className="squares-container">
-          {array.map ( (v, i) => {
+          {array.map((v, i) => {
             console.log('array', array, 'i', i, 'v', v)
-             return <button key={`v${i}`} className="square">{v}</button>
+            return (
+              <button key={`v${i}`} className="square">
+                {v}
+              </button>
+            )
           })}
         </section>
       </section>
@@ -89,4 +126,4 @@ function Arrays() {
   )
 }
 
-export default Arrays
+export default StackArray

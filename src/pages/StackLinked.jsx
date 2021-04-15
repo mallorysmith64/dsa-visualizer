@@ -5,7 +5,7 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft'
 import ArrowRightIcon from '@material-ui/icons/ArrowRight'
 
-function Stack() {
+function StackLinked() {
   let [push, setPush] = useState('')
   let [submitted, setSubmitted] = useState(false)
 
@@ -24,7 +24,7 @@ function Stack() {
   return (
     <>
       <section className="header">
-        <header>Stack (Array Implementation)</header>
+        <header>Stack (Linked List Implementation)</header>
       </section>
 
       <section className="controller-container">
@@ -106,4 +106,4 @@ function Stack() {
   )
 }
 
-export default Stack
+export default StackLinked
