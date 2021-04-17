@@ -1,5 +1,5 @@
 :root {
-  font: 16px / 1 sans-serif;
+  font: 16px / 1 arial;
   background-color: rgb(37, 34, 34);
 }
 
@@ -70,6 +70,25 @@ ul > li > a:hover {
   padding-right: 8em;
 }
 
+.editor-options-container {
+  display: flex;
+}
+
+.editor-tab-container {
+  display: flex;
+  position: relative;
+  background-color: rgb(57, 57, 57);
+  border: 0.05em solid rgb(114, 113, 113);
+  padding-left: 2.6em;
+  width: 28.5em;
+}
+
+.editor-tabs:hover {
+  background-color: dark-grey;
+  border-left: 0.05em solid rgb(114, 113, 113);
+  border-right: 0.05em solid rgb(114, 113, 113);
+}
+
 .left-btn {
   padding-right: 1.5em;
 }
@@ -99,13 +118,22 @@ ul > li > a:hover {
   border-right: 0.05em solid rgb(114, 113, 113);
 }
 
+.top-stack-container {
+  display: flex;
+  position: relative;
+  font-size: larger;
+  justify-content: center;
+  padding-left: 28em;
+  bottom: 25em;
+}
+
 /* illustrations */
 .squares-container {
   display: flex;
   justify-content: center;
   position: relative;
-  bottom: 20em;
-  padding-left:30em;
+  bottom: 25em;
+  padding-left: 30em;
 }
 
 .square {
