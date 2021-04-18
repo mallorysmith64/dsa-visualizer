@@ -4,6 +4,7 @@ import { Button } from '@material-ui/core'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft'
 import ArrowRightIcon from '@material-ui/icons/ArrowRight'
+import AddCircleIcon from '@material-ui/icons/AddCircle'
 
 function StackArray() {
   let [array, setArray] = useState([])
@@ -58,26 +59,28 @@ function StackArray() {
       </section>
 
       <section className="controller-container">
-        <div className="buttons">
-          <Button variant="contained" color="primary">
-            <PlayArrowIcon></PlayArrowIcon>Play
-          </Button>
-        </div>
+        <div className="editor-options-container">
+          <div className="buttons">
+            <Button variant="contained" color="primary">
+              <PlayArrowIcon></PlayArrowIcon>Play
+            </Button>
+          </div>
 
-        <div className="buttons left-btn">
-          <Button variant="contained" color="primary">
-            <ArrowLeftIcon></ArrowLeftIcon>
-          </Button>
-        </div>
+          <div className="buttons left-btn">
+            <Button variant="contained" color="primary">
+              <ArrowLeftIcon></ArrowLeftIcon>
+            </Button>
+          </div>
 
-        <div id="progress-bar">
-          <div>0/4</div>
-        </div>
+          <div id="progress-bar">
+            <div>0/4</div>
+          </div>
 
-        <div className="buttons">
-          <Button variant="contained" color="primary">
-            <ArrowRightIcon></ArrowRightIcon>
-          </Button>
+          <div className="buttons">
+            <Button variant="contained" color="primary">
+              <ArrowRightIcon></ArrowRightIcon>
+            </Button>
+          </div>
         </div>
 
         <section className="operation-container">
@@ -93,31 +96,52 @@ function StackArray() {
               ></input>
             </div>
           </form>
+
           <div className="buttons">
             <Button onClick={handlePush} value="Push" variant="contained">
               Push
             </Button>
           </div>
+
           <div className="buttons">
             <Button onClick={handlePop} value="Pop" variant="contained">
               Pop
             </Button>
           </div>
+
           <div className="buttons">
             <Button onClick={handleClear} value="Clear" variant="contained">
               Clear
             </Button>
           </div>
-
-          {/* Peek method below */}
-          <h1>
-            Top of Stack: {array.length === 0 ? '0' : `${array.slice(-1)[0]}`}
-          </h1>
         </section>
+      </section>
+
+      <section className="editor-tab-container">
+        <div className="editor-tabs">
+          <Button value="ReadMe">code.js</Button>
+        </div>
+
+        <div className="editor-tabs">
+          <Button value="ReadMe">README.md</Button>
+        </div>
+
+        <div className="editor-tabs">
+          <Button value="AddCircleIcon">
+            <AddCircleIcon></AddCircleIcon>
+          </Button>
+        </div>
       </section>
 
       <section className="editor-container">
         {Editor}
+
+        <section className="top-stack-container">
+          {/* finds top of stack via the peek method*/}
+          <h1>
+            Top of Stack: {array.length === 0 ? '0' : `${array.slice(-1)[0]}`}
+          </h1>
+        </section>
 
         <section className="squares-container">
           {array.map((v, i) => {
