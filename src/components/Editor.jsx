@@ -3,7 +3,6 @@ import AceEditor from 'react-ace'
 import 'ace-builds/src-noconflict/ext-language_tools'
 import 'ace-builds/webpack-resolver'
 
-
 export default
     <>
     <AceEditor

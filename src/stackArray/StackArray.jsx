@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import Editor from './Editor'
+// import {BrowserRouter as Link} from 'react-router-dom'
+import Editor from "../components/Editor"
 import { Button } from '@material-ui/core'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft'

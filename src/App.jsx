@@ -2,12 +2,12 @@ import React from 'react'
 import 'react-hot-loader'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Nav from './components/Nav'
-import HomePage from './pages/HomePage'
-import NotFound from './pages/NotFound'
+import HomePage from './components/HomePage'
+import NotFound from './components/NotFound'
 
 // Data Structure Pages
-import StackArray from './pages/StackArray'
-import StackLinked from './pages/StackLinked'
+import StackArray from './stackArray/StackArray'
+import StackLinked from './stackLinked/StackLinked'
 
 function App() {
   return (
