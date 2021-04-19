@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-// import {BrowserRouter as Link} from 'react-router-dom'
-import Editor from "../components/Editor"
+import Editor from '../components/Editor'
 import { Button } from '@material-ui/core'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft'
@@ -124,7 +123,9 @@ function StackArray() {
         </div>
 
         <div className="editor-tabs">
-          <Button value="ReadMe">README.md</Button>
+          <a href="https://github.com/mallorysmith64/dsa-visualizer/blob/test/src/stackArray/README.md">
+            README
+          </a>
         </div>
 
         <div className="editor-tabs">
