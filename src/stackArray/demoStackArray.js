@@ -1,7 +1,7 @@
 // LIFO - linear data structure
 // create class with constructor for properties: items/data and size/count/top of array
 
-class Stack {
+export default class demoStackArray {
     constructor() {
       this.items = [];
       this.size = 0;
@@ -41,7 +41,7 @@ class Stack {
   }
   
   // test stack by creating new one
-  const stack = new Stack();
+  const stack = new demoStackArray();
   
   // perform operations
   stack.isEmpty();

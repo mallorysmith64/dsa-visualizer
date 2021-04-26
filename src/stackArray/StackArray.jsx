@@ -5,6 +5,7 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft'
 import ArrowRightIcon from '@material-ui/icons/ArrowRight'
 import AddCircleIcon from '@material-ui/icons/AddCircle'
+import demoStackArray from './demoStackArray'
 
 function StackArray() {
   let [array, setArray] = useState([])
