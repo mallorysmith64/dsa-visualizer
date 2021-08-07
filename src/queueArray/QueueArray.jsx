@@ -5,33 +5,28 @@ import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft'
 import ArrowRightIcon from '@material-ui/icons/ArrowRight'
 import AddCircleIcon from '@material-ui/icons/AddCircle'
-// import demoStackArray from './demoStackArray'
 
-function StackArray() {
+function QueueArray() {
   let [array, setArray] = useState([])
   let [field, setField] = useState('')
 
-  const handlePush = () => {
+  const handleEnqueue = () => {
     if (array.length < 5) {
       setArray([...array, field])
       console.log('Added element: ', field)
     } else {
-      console.log('Stack Overflow!')
-      alert('Stack Overflow!')
+      console.log('Overflow!')
+      alert('Overflow!')
     }
   }
 
-  const handlePop = i => {
-    let index = array.indexOf(i)
-    if (array.length > 0) {
-      array.splice(index, 1) // slice: start position, number of elements to delete
-      console.log(array)
-      setArray([...array])
-    } else {
-      console.log(array)
-      alert('Stack Underflow!')
-    }
+  // WIP
+  const handleDequeue = i => {
+    if(array.length > 0) {
+   array.shift(0)
+   setArray([...array])
   }
+}
 
   const handleClear = () => {
     while (array.length) {
@@ -56,7 +51,7 @@ function StackArray() {
   return (
     <>
       <section className="header">
-        <header>Stack (Array Implementation)</header>
+        <header>Queue (Array Implementation)</header>
       </section>
 
       <section className="controller-container">
@@ -99,14 +94,14 @@ function StackArray() {
           </form>
 
           <div className="buttons">
-            <Button onClick={handlePush} value="Push" variant="contained">
-              Push
+            <Button onClick={handleEnqueue} value="Push" variant="contained">
+              Enqueue
             </Button>
           </div>
 
           <div className="buttons">
-            <Button onClick={handlePop} value="Pop" variant="contained">
-              Pop
+            <Button onClick={handleDequeue} value="Pop" variant="contained">
+              Dequeue
             </Button>
           </div>
 
@@ -124,7 +119,7 @@ function StackArray() {
         </div>
 
         <div className="editor-tabs">
-          <a href="https://github.com/mallorysmith64/dsa-visualizer/blob/test/src/stackArray/README.md">
+          <a href="https://github.com/mallorysmith64/dsa-visualizer/blob/test/src/queueArray/README.md">
             README
           </a>
         </div>
@@ -138,13 +133,6 @@ function StackArray() {
 
       <section className="editor-container">
         {Editor}
-
-        <section className="top-stack-container">
-          {/* finds top of stack via the peek method*/}
-          <h1>
-            Top of Stack: {array.length === 0 ? '0' : `${array.slice(-1)[0]}`}
-          </h1>
-        </section>
 
         <section className="squares-container">
           {array.map((v, i) => {
@@ -161,4 +149,4 @@ function StackArray() {
   )
 }
 
-export default StackArray
+export default QueueArray
